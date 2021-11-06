@@ -22,8 +22,10 @@
   overflow: hidden;
   border-radius: 16px;
   box-shadow: 0px 10px 18px 3px rgba(0, 0, 0, 0.5);
-  color:white
-
+  color:white;
+  /* background: linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%); */
+  /* background: linear-gradient(30deg, #5e0000 0%, #860000 25%, #ad0000 50%, #ad0000 75%); */
+  /* background: linear-gradient(30deg, #020202 0%, #1d1d1d 25%, #3f3f3f 50%, #5a5a5a 75%); */
 }
 
 .payment-card-face::before{
@@ -71,8 +73,7 @@
 
 .payment-card-front {
   backface-visibility: hidden;
-  border-radius: 10px;
-  background: linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%, #17293c 90% );
+  border-radius: 10px; 
 }
 
 
@@ -80,7 +81,6 @@
   backface-visibility: hidden;
   border-radius: 10px;
   transform: rotateY(-180deg);  
-  background: linear-gradient(30deg, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%, #17293c 90% );
 }
 
 .flipcard {

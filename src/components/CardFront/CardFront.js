@@ -16,6 +16,8 @@ export const CardFront = ({
   cardHolderName,
   cardValidity,
   cardNumber,
+  cardBgColor,
+  getBackground,
 }) => {
   const cardProps = { width: "150px", height: "90px" };
   const CARD_TYPE = {
@@ -29,10 +31,14 @@ export const CardFront = ({
   const renderCardType = (cardType) => {
     return CARD_TYPE[cardType];
   };
+
   return (
-    <div className="payment-card-face payment-card-front">
+    <div
+      className="payment-card-face payment-card-front"
+      style={{ background: getBackground(cardBgColor) }}
+    >
       <div style={{ position: "absolute", top: 0, right: 0 }}>
-        {renderCardType(cardType) || <DefaultCardType />}
+        {renderCardType(cardType.toLowerCase()) || <DefaultCardType />}
       </div>
       <div
         style={{
@@ -44,7 +50,7 @@ export const CardFront = ({
       </div>
       <CardNumber
         getFormattedCardNumber={getFormattedCardNumber}
-        cardNumber={cardNumber}
+        cardNumber={cardNumber || "placeholder"}
       />
       <div className="card-details-container">
         <div>

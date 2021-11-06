@@ -10,9 +10,14 @@ export const CardBack = ({
   cardNumber,
   cardHolderName,
   cardValidity,
+  cardBgColor,
+  getBackground,
 }) => {
   return (
-    <div className="payment-card-face payment-card-back">
+    <div
+      className="payment-card-face payment-card-back"
+      style={{ background: getBackground(cardBgColor) }}
+    >
       <div className="payment-card-strip" />
       <SecurityCode code={cardSecurityCode} />
       <CardNumber

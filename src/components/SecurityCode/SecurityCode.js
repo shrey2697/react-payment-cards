@@ -12,6 +12,7 @@ export const SecurityCode = ({ code }) => (
     }}
   >
     <div
+      className="background-image"
       style={{
         backgroundColor: "#cccccc",
         height: "40px",

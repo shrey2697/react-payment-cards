@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PaymentCard } from "./components/PaymentCard";
 import "./App.css";
 
@@ -12,12 +12,12 @@ function App() {
   const [cardBgColor, setCardBgColor] = useState("sea");
 
   const cardDetails = {
-    cardType: "Visa",
     cardHolderName: cardHolderName,
     cardValidity: cardValidity,
     cardSecurityCode: cardSecurityCode,
     cardNumber: cardNumber,
   };
+
   return (
     <div className="app">
       <PaymentCard
@@ -40,9 +40,9 @@ function App() {
           placeholder="card number"
           maxLength={16}
           value={cardNumber}
-          onChange={(e) =>
-            e.target.value.length <= 16 && setCardNumber(e.target.value)
-          }
+          onChange={(e) => {
+            if (e.target.value.length <= 16) setCardNumber(e.target.value);
+          }}
         />
         <input
           placeholder="card holder's name"

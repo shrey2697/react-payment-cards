@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { CardBack } from "../CardBack.js";
 import { CardFront } from "../CardFront/CardFront";
@@ -7,19 +7,16 @@ import "./styles.css";
 
 export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [cardType, setCardType] = useState("default");
   useEffect(() => {
     setIsFlipped(flipped);
   }, [flipped]);
-  const {
-    cardNumber,
-    cardHolderName,
-    cardSecurityCode,
-    cardType,
-    cardValidity,
-  } = cardDetails;
+  const { cardHolderName, cardSecurityCode, cardNumber, cardValidity } =
+    cardDetails;
   const getFormattedCardNumber = (number) => {
     return number?.toString().replace(/\d{4}(?=.)/g, "$& ");
   };
+
   const getBackground = (bgColor) => {
     switch (bgColor) {
       case "blood":
@@ -32,6 +29,27 @@ export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
         return "linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%)";
     }
   };
+
+  useEffect(() => {
+    getCardType(cardNumber);
+  }, [cardNumber]);
+
+  const getCardType = (num) => {
+    if (num.startsWith(4)) {
+      setCardType("visa");
+    } else if (num.startsWith(5)) {
+      setCardType("mastercard");
+    } else if (num.startsWith(67)) {
+      setCardType("maestro");
+    } else if (num.startsWith(34)) {
+      setCardType("amex");
+    } else if (num.startsWith(60) || num.startsWith(6521)) {
+      setCardType("rupay");
+    } else {
+      setCardType("default");
+    }
+  };
+
   return (
     <div className="payment-card-container">
       <div

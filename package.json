@@ -1,6 +1,6 @@
 {
   "name": "react-payment-cards",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": false,
   "author": "shrey2697@gmail.com",
   "main": "dist/index.js",
@@ -62,10 +62,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shrey2697/react-payment-card.git"
+    "url": "git+https://github.com/shrey2697/react-payment-cards.git"
   },
   "bugs": {
-    "url": "https://github.com/shrey2697/react-payment-card/issues"
+    "url": "https://github.com/shrey2697/react-payment-cards/issues"
   },
-  "homepage": "https://github.com/shrey2697/react-payment-card#readme"
+  "homepage": "https://github.com/shrey2697/react-payment-cards#readme"
 }

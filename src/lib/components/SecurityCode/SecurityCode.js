@@ -4,7 +4,7 @@ export const SecurityCode = ({ code }) => (
   <div
     style={{
       display: "flex",
-      width: "50%",
+      width: "15rem",
       position: "absolute",
       top: "120px",
       left: "40px",
@@ -23,7 +23,8 @@ export const SecurityCode = ({ code }) => (
       style={{
         backgroundColor: "#fff",
         height: "30px",
-        width: "20%",
+        width: "3rem",
+        fontSize: 16,
         color: "grey",
         display: "flex",
         alignItems: "center",

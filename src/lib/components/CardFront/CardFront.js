@@ -42,8 +42,9 @@ export const CardFront = ({
       </div>
       <div
         style={{
-          marginTop: "15%",
-          marginBottom: "5%",
+          marginTop: "4rem",
+          marginBottom: "2rem",
+          width: "0px",
         }}
       >
         <Chip />

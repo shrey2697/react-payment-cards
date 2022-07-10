@@ -1,19 +1,30 @@
 {
-  "name": "react-payment-card",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-payment-cards",
+  "version": "0.2.5",
+  "private": false,
+  "author": "shrey2697@gmail.com",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "description": "A beautiful React component that creates a virtual avatar of your credit/debit card to enhance the user experience.",
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.1.2"
   },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "resolutions": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && cross-env NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -34,5 +45,27 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "cross-env": "^7.0.3"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "javascript",
+    "typescript",
+    "payment",
+    "payment card"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shrey2697/react-payment-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shrey2697/react-payment-card/issues"
+  },
+  "homepage": "https://github.com/shrey2697/react-payment-card#readme"
 }

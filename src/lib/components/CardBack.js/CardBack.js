@@ -31,6 +31,7 @@ export const CardBack = ({
         getFormattedCardNumber={getFormattedCardNumber}
         isBackVisible={true}
         cardNumber={cardNumber}
+        size={size}
       />
 
       <div

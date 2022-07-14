@@ -4,9 +4,9 @@ export const CardLabel = ({ value }) => (
   <div
     style={{
       color: "white",
-      fontSize: 12,
+      fontSize: 8,
       textTransform: "uppercase",
-      marginBottom: 5,
+      marginBottom: 2,
     }}
   >
     {value}

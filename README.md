@@ -20,6 +20,7 @@ const cardDetails = {
   cardDetails={cardDetails}
   flipped={false} // Pass `true` to see the back of the card on first load
   cardBgColor="sea" // sea | blood | night
+  size="lg" // sm | md | lg
 />;
 ```
 
@@ -28,12 +29,9 @@ const cardDetails = {
 Refer to `FullExample.js` for complete implementation
 
 ## Demo
+
 https://codesandbox.io/s/react-payment-cards-xye6zb
 
 ## Contributing
 
 Create a `feature` or `fix` branch based on your contribution and then create a pull request.
-
-## Upcoming Feature(s)
-
-- Multiple sizes for the card

@@ -9,6 +9,7 @@ import { CardDetail } from "../CardDetail/CardDetail";
 import { CardLabel } from "../CardLabel/CardLabel";
 import { CardNumber } from "../CardNumber";
 import { DefaultCardType } from "../DefaultCardType";
+import { cardSize } from "../util";
 
 export const CardFront = ({
   getFormattedCardNumber,
@@ -18,14 +19,19 @@ export const CardFront = ({
   cardNumber,
   cardBgColor,
   getBackground,
+  size = "lg",
 }) => {
-  const cardProps = { width: "150px", height: "90px" };
+  const logoProps = {
+    width: cardSize[size]["logoProps"].width,
+    height: cardSize[size]["logoProps"].height,
+  };
+
   const CARD_TYPE = {
-    visa: <Visa {...cardProps} />,
-    mastercard: <MC_V {...cardProps} />,
-    amex: <Amex {...cardProps} />,
-    maestro: <Maestro {...cardProps} />,
-    rupay: <Rupay {...cardProps} />,
+    visa: <Visa {...logoProps} />,
+    mastercard: <MC_V {...logoProps} />,
+    amex: <Amex {...logoProps} />,
+    maestro: <Maestro {...logoProps} />,
+    rupay: <Rupay {...logoProps} />,
   };
 
   const renderCardType = (cardType) => {
@@ -42,26 +48,35 @@ export const CardFront = ({
       </div>
       <div
         style={{
-          marginTop: "4rem",
-          marginBottom: "2rem",
+          marginTop: cardSize[size]["chip"].marginTop,
+          marginBottom: cardSize[size]["chip"].marginBottom,
           width: "0px",
         }}
       >
-        <Chip />
+        <Chip
+          width={cardSize[size]["chip"].width}
+          height={cardSize[size]["chip"].height}
+        />
       </div>
       <CardNumber
         getFormattedCardNumber={getFormattedCardNumber}
         cardNumber={cardNumber || "placeholder"}
+        size={size}
       />
-      <div className="card-details-container">
+      <div
+        className="card-details-container"
+        style={{
+          padding: cardSize[size]["cardDetail"].padding,
+        }}
+      >
         <div style={{ textAlign: "left" }}>
-          <CardLabel value="Card holder's name" />
-          <CardDetail value={cardHolderName} />
+          <CardLabel value="Card holder's name" size={size} />
+          <CardDetail value={cardHolderName} size={size} />
         </div>
 
         <div style={{ textAlign: "right" }}>
-          <CardLabel value="Valid thru" />
-          <CardDetail value={cardValidity} />
+          <CardLabel value="Valid thru" size={size} />
+          <CardDetail value={cardValidity} size={size} />
         </div>
       </div>
     </div>

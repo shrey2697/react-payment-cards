@@ -1,13 +1,14 @@
 import React from "react";
+import { cardSize } from "../util";
 
-export const SecurityCode = ({ code }) => (
+export const SecurityCode = ({ code, size = "lg" }) => (
   <div
     style={{
       display: "flex",
       width: "15rem",
       position: "absolute",
-      top: "120px",
-      left: "40px",
+      top: cardSize[size]["securityCode"].top,
+      left: cardSize[size]["securityCode"].left,
       alignItems: "center",
     }}
   >
@@ -15,16 +16,16 @@ export const SecurityCode = ({ code }) => (
       className="background-image"
       style={{
         backgroundColor: "#cccccc",
-        height: "40px",
-        width: "80%",
+        height: cardSize[size]["securityCode"].height,
+        width: cardSize[size]["securityCode"].width,
       }}
     />
     <div
       style={{
         backgroundColor: "#fff",
-        height: "30px",
-        width: "3rem",
-        fontSize: 16,
+        height: cardSize[size]["securityCode"].cvvHeight,
+        width: cardSize[size]["securityCode"].cvvWidth,
+        fontSize: cardSize[size]["securityCode"].size,
         color: "grey",
         display: "flex",
         alignItems: "center",

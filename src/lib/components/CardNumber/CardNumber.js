@@ -1,21 +1,23 @@
 import React from "react";
+import { cardSize } from "../util";
 
 export const CardNumber = ({
   getFormattedCardNumber,
   isBackVisible,
   cardNumber,
+  size = "lg",
 }) => {
   return (
     <div
       style={{
         color: "grey",
         textShadow: "1px 1px 1px white",
-        fontSize: 22,
+        fontSize: cardSize[size].cardNumberSize,
         width: "100%",
         display: "flex",
         justifyContent: "center",
         visibility: cardNumber === "placeholder" && "hidden",
-        letterSpacing: "12px",
+        letterSpacing: cardSize[size].cardNumberSpacing,
         ...(isBackVisible && {
           transform: "scale(-1, 1)",
           position: "absolute",

@@ -2,10 +2,16 @@ import React, { useEffect, useState } from "react";
 
 import { CardBack } from "../CardBack.js";
 import { CardFront } from "../CardFront/CardFront";
+import { cardSize } from "../util.js";
 
 import "./styles.css";
 
-export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
+export const PaymentCard = ({
+  cardDetails,
+  flipped,
+  cardBgColor,
+  size = "lg",
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [cardType, setCardType] = useState("default");
   const defaultCardDetails = {
@@ -57,7 +63,13 @@ export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
   };
 
   return (
-    <div className="payment-card-container">
+    <div
+      className="payment-card-container"
+      style={{
+        width: cardSize[size]["card"].width,
+        height: cardSize[size]["card"].height,
+      }}
+    >
       <div
         className={`payment-card ${isFlipped && "flipcard"}`}
         onClick={() => setIsFlipped(!isFlipped)}
@@ -70,6 +82,7 @@ export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
           cardNumber={cardNumber || ""}
           getBackground={getBackground}
           cardBgColor={cardBgColor}
+          size={size}
         />
         <CardBack
           getFormattedCardNumber={getFormattedCardNumber}
@@ -79,6 +92,7 @@ export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
           cardValidity={cardValidity}
           getBackground={getBackground}
           cardBgColor={cardBgColor}
+          size={size}
         />
       </div>
     </div>

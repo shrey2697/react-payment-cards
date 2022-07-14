@@ -1,12 +1,13 @@
 import React from "react";
+import { cardSize } from "../util";
 
-export const CardLabel = ({ value }) => (
+export const CardLabel = ({ value, size }) => (
   <div
     style={{
       color: "white",
-      fontSize: 8,
+      fontSize: cardSize[size]["cardLabel"].size,
       textTransform: "uppercase",
-      marginBottom: 2,
+      marginBottom: cardSize[size]["cardLabel"].marginBottom,
     }}
   >
     {value}

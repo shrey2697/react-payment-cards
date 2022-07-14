@@ -1,12 +1,13 @@
 import React from "react";
 
-export const Chip = () => {
+export const Chip = ({ width = "100px", height = "80px" }) => {
+  //change for sm
   return (
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
-      width="100px"
-      height="80px"
+      width={width} // change for sm
+      height={height} // change for sm
       viewBox="0 0 509.000000 339.000000"
       preserveAspectRatio="xMidYMid meet"
     >

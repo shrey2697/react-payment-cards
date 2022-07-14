@@ -8,7 +8,6 @@ export const CardDetail = ({ value }) => {
         textShadow: "1px 1px 1px white",
         fontSize: 16,
         width: "100%",
-        textAlign: "left",
         textTransform: "uppercase",
       }}
     >

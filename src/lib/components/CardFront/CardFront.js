@@ -54,7 +54,7 @@ export const CardFront = ({
         cardNumber={cardNumber || "placeholder"}
       />
       <div className="card-details-container">
-        <div>
+        <div style={{ textAlign: "left" }}>
           <CardLabel value="Card holder's name" />
           <CardDetail value={cardHolderName} />
         </div>

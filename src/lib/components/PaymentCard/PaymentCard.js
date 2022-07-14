@@ -8,11 +8,17 @@ import "./styles.css";
 export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [cardType, setCardType] = useState("default");
+  const defaultCardDetails = {
+    cardHolderName: "",
+    cardSecurityCode: "",
+    cardNumber: "",
+    cardValidity: "",
+  };
   useEffect(() => {
     setIsFlipped(flipped);
   }, [flipped]);
   const { cardHolderName, cardSecurityCode, cardNumber, cardValidity } =
-    cardDetails;
+    cardDetails || defaultCardDetails;
   const getFormattedCardNumber = (number) => {
     return number?.toString().replace(/\d{4}(?=.)/g, "$& ");
   };
@@ -58,10 +64,10 @@ export const PaymentCard = ({ cardDetails, flipped, cardBgColor }) => {
       >
         <CardFront
           getFormattedCardNumber={getFormattedCardNumber}
-          cardType={cardType}
-          cardHolderName={cardHolderName}
-          cardValidity={cardValidity}
-          cardNumber={cardNumber}
+          cardType={cardType || ""}
+          cardHolderName={cardHolderName || ""}
+          cardValidity={cardValidity || ""}
+          cardNumber={cardNumber || ""}
           getBackground={getBackground}
           cardBgColor={cardBgColor}
         />

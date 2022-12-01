@@ -38,7 +38,7 @@ export const PaymentCard = ({
       case "sea":
         return "linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%)";
       case "purple":
-        return "linear-gradient(30deg, rgba(0,0,0,1) 0%, rgba(42,35,35,1) 25%, rgba(94,53,113,1) 50%, rgba(83,30,130,1) 75%)";
+        return "linear-gradient(30deg, #000000 0%, #2a2323 25%, #5e3571 50%, #531e82 75%)";
       default:
         return "linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%)";
     }

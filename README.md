@@ -19,7 +19,7 @@ const cardDetails = {
 <PaymentCard
   cardDetails={cardDetails}
   flipped={false} // Pass `true` to see the back of the card on first load
-  cardBgColor="sea" // sea | blood | night
+  cardBgColor="sea" // sea | blood | night | purple
   size="lg" // sm | md | lg
 />;
 ```

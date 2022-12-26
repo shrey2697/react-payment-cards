@@ -24,9 +24,7 @@ const cardDetails = {
 />;
 ```
 
-![React Payment Cards](src/demo/RPCdemo.png)
-![React Payment Cards Medium](src/demo/RPCdemoMd.png)
-![React Payment Cards Small](src/demo/RPCdemoSm.png)
+![React Payment Cards](src/demo/RPC_DEMO.gif)
 
 Refer to `FullExample.js` for complete implementation
 

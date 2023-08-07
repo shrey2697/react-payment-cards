@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PaymentCard } from "./components/PaymentCard";
-import "./App.css";
+import { PaymentCard } from "./lib/components/PaymentCard";
 
 function App() {
   const [cardNumber, setCardNumber] = useState("");
@@ -15,11 +14,21 @@ function App() {
     cardHolderName: cardHolderName,
     cardValidity: cardValidity,
     cardSecurityCode: cardSecurityCode,
-    cardNumber: cardNumber,
+    cardNumber: cardNumber
   };
 
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={{
+        height: "100vh",
+        paddingLeft: "10%",
+        paddingTop: "10%",
+        backgroundSize: "cover",
+        backgroundImage:
+          "url('https://res.allmacwallpaper.com/pic/Thumbnails/3141_728.jpg')"
+      }}
+    >
       <PaymentCard
         cardDetails={cardDetails}
         flipped={focus}
@@ -34,6 +43,7 @@ function App() {
           <option>sea</option>
           <option>blood</option>
           <option>night</option>
+          <option>glass</option>
         </select>
         <input
           type="number"

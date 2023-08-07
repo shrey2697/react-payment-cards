@@ -19,11 +19,11 @@ export const CardFront = ({
   cardNumber,
   cardBgColor,
   getBackground,
-  size = "lg",
+  size = "lg"
 }) => {
   const logoProps = {
     width: cardSize[size]["logoProps"].width,
-    height: cardSize[size]["logoProps"].height,
+    height: cardSize[size]["logoProps"].height
   };
 
   const CARD_TYPE = {
@@ -31,7 +31,7 @@ export const CardFront = ({
     mastercard: <MC_V {...logoProps} />,
     amex: <Amex {...logoProps} />,
     maestro: <Maestro {...logoProps} />,
-    rupay: <Rupay {...logoProps} />,
+    rupay: <Rupay {...logoProps} />
   };
 
   const renderCardType = (cardType) => {
@@ -41,7 +41,13 @@ export const CardFront = ({
   return (
     <div
       className="payment-card-face payment-card-front"
-      style={{ background: getBackground(cardBgColor) }}
+      style={{
+        background: getBackground(cardBgColor),
+        boxShadow:
+          cardBgColor === "glass"
+            ? "none"
+            : "0px 10px 18px 3px rgba(0, 0, 0, 0.5)"
+      }}
     >
       <div style={{ position: "absolute", top: 0, right: 0 }}>
         {renderCardType(cardType.toLowerCase()) || <DefaultCardType />}
@@ -50,7 +56,7 @@ export const CardFront = ({
         style={{
           marginTop: cardSize[size]["chip"].marginTop,
           marginBottom: cardSize[size]["chip"].marginBottom,
-          width: "0px",
+          width: "0px"
         }}
       >
         <Chip
@@ -66,7 +72,7 @@ export const CardFront = ({
       <div
         className="card-details-container"
         style={{
-          padding: cardSize[size]["cardDetail"].padding,
+          padding: cardSize[size]["cardDetail"].padding
         }}
       >
         <div style={{ textAlign: "left" }}>

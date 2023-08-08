@@ -10,7 +10,7 @@ export const PaymentCard = ({
   cardDetails,
   flipped,
   cardBgColor,
-  size = "lg",
+  size = "lg"
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [cardType, setCardType] = useState("default");
@@ -18,7 +18,7 @@ export const PaymentCard = ({
     cardHolderName: "",
     cardSecurityCode: "",
     cardNumber: "",
-    cardValidity: "",
+    cardValidity: ""
   };
   useEffect(() => {
     setIsFlipped(flipped);
@@ -37,8 +37,8 @@ export const PaymentCard = ({
         return "linear-gradient(30deg, #020202 0%, #1d1d1d 25%, #3f3f3f 50%, #5a5a5a 75%)";
       case "sea":
         return "linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%)";
-      case "purple":
-        return "linear-gradient(30deg, #000000 0%, #2a2323 25%, #5e3571 50%, #531e82 75%)";
+      case "glass":
+        return "rgba(255,255,255,0.15)";
       default:
         return "linear-gradient(to right, #06121e 0%, #0b1827 25%, #112334 50%, #17293c 75%)";
     }
@@ -69,7 +69,7 @@ export const PaymentCard = ({
       className="payment-card-container"
       style={{
         width: cardSize[size]["card"].width,
-        height: cardSize[size]["card"].height,
+        height: cardSize[size]["card"].height
       }}
     >
       <div

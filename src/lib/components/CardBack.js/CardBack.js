@@ -13,17 +13,23 @@ export const CardBack = ({
   cardValidity,
   cardBgColor,
   getBackground,
-  size = "lg",
+  size = "lg"
 }) => {
   return (
     <div
       className="payment-card-face payment-card-back"
-      style={{ background: getBackground(cardBgColor) }}
+      style={{
+        background: getBackground(cardBgColor),
+        boxShadow:
+          cardBgColor === "glass"
+            ? "none"
+            : "0px 10px 18px 3px rgba(0, 0, 0, 0.5)"
+      }}
     >
       <div
         className="payment-card-strip"
         style={{
-          height: cardSize[size]["strip"],
+          height: cardSize[size]["strip"]
         }}
       />
       <SecurityCode code={cardSecurityCode} size={size} />
@@ -37,7 +43,7 @@ export const CardBack = ({
       <div
         className="card-details-container"
         style={{
-          padding: cardSize[size]["cardDetail"].padding,
+          padding: cardSize[size]["cardDetail"].padding
         }}
       >
         <div className="card-holder">
